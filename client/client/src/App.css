@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 300px;
+}
+
+.login-box h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-box button:hover {
+  background: #5a6fd8;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.chat-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #667eea;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-sidebar {
+  width: 250px;
+  background: #f8f9fa;
+  border-right: 1px solid #e9ecef;
+  padding: 1rem;
+}
+
+.chat-sidebar h3 {
+  margin-bottom: 1rem;
+  color: #495057;
+}
+
+.users-list {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: #28a745;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.message {
+  background: white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 70%;
+}
+
+.system-message {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.time {
+  font-size: 0.8em;
+  color: #6c757d;
+  margin-left: 10px;
+}
+
+.typing-indicator {
+  color: #6c757d;
+  font-style: italic;
+  padding: 5px;
+  font-size: 0.9em;
+}
+
+.input-container {
+  display: flex;
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #e9ecef;
+  gap: 10px;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-container input:focus {
+  border-color: #667eea;
+}
+
+.input-container button {
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.input-container button:hover {
+  background: #5a6fd8;
+}
+
+.online-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.9em;
+}
+/* Add to your App.css */
+.message:hover {
+  background: #e3f2fd;
+  transform: translateX(5px);
+  transition: all 0.2s ease;
+}
+
+.login-box {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.9em;
+}
+
+.user-info span {
+  margin-bottom: 4px;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+}
+/* Add these new styles to your existing App.css */
+
+.loading-message {
+  text-align: center;
+  color: #667eea;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sidebar-actions {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.clear-btn {
+  width: 100%;
+  padding: 8px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.clear-btn:hover {
+  background: #c82333;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.9em;
+}
+
+.user-info span {
+  margin-bottom: 4px;
+}
+
+.online-count {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
